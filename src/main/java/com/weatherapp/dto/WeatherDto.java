@@ -12,4 +12,5 @@ public class WeatherDto {
     private double windSpeed;
     private int sunRises;
     private int sunGoesDown;
+    private String description;
 }

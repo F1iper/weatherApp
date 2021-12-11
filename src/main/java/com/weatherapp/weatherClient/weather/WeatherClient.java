@@ -5,9 +5,13 @@ import com.weatherapp.dto.WeatherDto;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.nio.charset.StandardCharsets;
+import java.util.Locale;
+
 @Component
 public class WeatherClient {
 
+    public static final String SAMPLE = "Przykladowy tekst";
     public static final String WEATHER_URL = "http://api.openweathermap.org/data/2.5/";
     public static final String API_KEY = "d60b60482c51ee9e765c6d8bfaecf6d6";
     private final RestTemplate restTemplate = new RestTemplate();
@@ -23,6 +27,8 @@ public class WeatherClient {
                 .sunRises(openWeatherDto.getSys().getSunrise())
                 .sunGoesDown(openWeatherDto.getSys().getSunset())
                 .windSpeed(openWeatherDto.getWind().getSpeed())
+//                .description(openWeatherDto.getWeather().getDescription())
+                .description(SAMPLE)
                 .build();
     }
 
