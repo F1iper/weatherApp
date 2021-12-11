@@ -1,6 +1,6 @@
 package com.weatherapp.controller;
 
-import com.weatherapp.model.WeatherDto;
+import com.weatherapp.dto.WeatherDto;
 import com.weatherapp.service.WeatherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

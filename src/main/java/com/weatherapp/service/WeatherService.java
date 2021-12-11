@@ -1,6 +1,6 @@
 package com.weatherapp.service;
 
-import com.weatherapp.model.WeatherDto;
+import com.weatherapp.dto.WeatherDto;
 import com.weatherapp.weatherClient.weather.WeatherClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,13 +13,8 @@ public class WeatherService {
 
     private final WeatherClient weatherClient;
 
-
     public WeatherDto getWeather() {
-        String response = weatherClient.getWeatherForCity("warszawa");
-        log.info(response);
-        String forecast = weatherClient.getForecast(52.2298, 21.0118);
-        log.info(forecast);
-
-        return null;
+        log.info(String.valueOf(System.nanoTime()));
+        return weatherClient.getWeatherForCity("warszawa");
     }
 }
